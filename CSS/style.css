@@ -6,52 +6,62 @@
 /* ================================================================
                    PERSONAL INFORMATION
 ============================================================= */
+input {
+  display: block;
+}
 
-#pers-info-field {
+#personal-information {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1.5fr 1.5fr;
-  grid-template-areas: "pi1 pi1 pi1 pi2" "pi3 pi3 pi3 ..." "pi4 pi4 pi4 ..." "pi5 pi5 pi5 pi5" "pi6 pi7 pi8 pi9" "pi10 pi10 pi10 pi10";
+  grid-template-rows: 1fr 1fr 1fr 1.5fr 1fr 1.5fr;
+  grid-template-areas: 
+  "name name name phone"
+  "email email email ..."
+  "re-email re-email re-email ..."
+  "adress adress adress ..."
+  "city state country zip"
+  "how how how how";
+ 
 }
 
-#pi1 {
-  grid-area: pi1;
+#name {
+  grid-area: name;
 }
 
-#pi2 {
-  grid-area: pi2;
+#phone {
+  grid-area: phone;
 }
 
-#pi3 {
-  grid-area: pi3;
+#email {
+  grid-area: email;
 }
 
-#pi4 {
-  grid-area: pi4;
+#re-email {
+  grid-area: re-email;
 }
 
-#pi5 {
-  grid-area: pi5;
+#adress {
+  grid-area: adress;
 }
 
-#pi6 {
-  grid-area: pi6;
+#city {
+  grid-area: city;
 }
 
-#pi7 {
-  grid-area: pi7;
+#state{
+  grid-area: state;
 }
 
-#pi8 {
-  grid-area: pi8;
+#country {
+  grid-area: country;
 }
 
-#pi9 {
-  grid-area: pi9;
+#zip{
+  grid-area: zip;
 }
 
-#pi10 {
-  grid-area: pi10;
+#how{
+  grid-area: how;
 }
 
 /* ================================================================
