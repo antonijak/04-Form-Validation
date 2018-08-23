@@ -21,38 +21,41 @@
     <h3>1. Personal information</h3>
     <section id="section1">
       <form action="" id="personal-information">
-       
-          <div id="name" >
+
+        <div id="name">
           <input type="text" class="pi-input" placeholder="Full Name*">
         </div>
-        <div id="phone" >
-          <input type="text" class="pi-input" placeholder="Phone*">
+        <div id="phone">
+          <input type="tel" class="pi-input" placeholder="Phone*">
         </div>
-        <div id="email" >
-          <input type="text" class="pi-input" placeholder="E-mail*">
+        <div id="email">
+          <input type="email" class="pi-input" placeholder="E-mail*">
         </div>
-        <div id="re-email" >
-          <input type="text" class="pi-input" placeholder="Re-enter email*">
+        <div id="re-email">
+          <input type="email" class="pi-input" placeholder="Re-enter email*">
         </div>
-        <div id="adress" >
+        <div id="adress">
           <input type="text" class="pi-input" placeholder="Adress*">
         </div>
-        <div id="city" >
+        <div id="adress2">
+          <input type="text" class="pi-input">
+        </div>
+        <div id="city">
           <input type="text" class="pi-input" placeholder="City*">
         </div>
-        <div id="state" >
+        <div id="state">
           <input type="text" class="pi-input" placeholder="State">
         </div>
-        <div id="country" >
+        <div id="country">
           <input type="text" class="pi-input" placeholder="Country/Region*">
         </div>
-        <div id="zip" >
+        <div id="zip">
           <input type="text" class="pi-input" placeholder="Zip/Postal code*">
         </div>
-        <div id="how" >
+        <div id="how">
           <input type="text" class="pi-input" placeholder="How did you hear about us*">
         </div>
-        
+
       </form>
     </section>
     <!-- ====================================================
@@ -61,77 +64,86 @@
     <h3>2. Skills and location</h3>
     <section>
       <form action="" id="skills-location">
-        <fieldset id="sl-primary-discipline">
-          <legend>Which is your primary design discipline?*</legend>
-          <div id="sl1">
+<!--================ RADIO BUTTONS BLUE=================== -->
+        <ul id="radio">
+          <h6 id="sl-title"> Which is your primary design discipline?*</h6>
+          <li id="sl1">
             <input type="radio" name="primary" id="design-research">
-            <label for="design-research">Design Research</label>
-          </div>
-          <div id="sl2">
+            <label for="design-research" class="rb-label">Design Research</label>
+          </li>
+          <li id="sl2">
             <input type="radio" name="primary" id="visual-design">
-            <label for="visual-design">Visual Design</label>
-          </div>
-          <div id="sl3">
+            <label for="visual-design" class="rb-label">Visual Design</label>
+          </li>
+          <li id="sl3">
             <input type="radio" name="primary" id="ux-design">
-            <label for="ux-design">UX Design</label>
-          </div>
-          <div id="sl4">
+            <label for="ux-design" class="rb-label">UX Design</label>
+          </li>
+          <li id="sl4">
             <input type="radio" name="primary" id="front-end">
-            <label for="front-end">Front-End Dev</label>
-          </div>
-        </fieldset>
-
+            <label for="front-end" class="rb-label">Front-End Dev</label>
+          </li>
+        </ul>
+<!--================ CHECKBOX OTHER=================== -->
         <fieldset id="sl-other-discipline">
           <legend>Do you have experience with any other disciplines?</legend>
           <div>
-            <input type="checkbox" name="disciplines" id="cb-visual-design">
+            <input type="checkbox" name="disciplines" id="cb-visual-design" class="checking">
             <label for="visual-design">Visual Design</label>
           </div>
           <div>
-            <input type="checkbox" name="disciplines" id="cb-ux-design">
+            <input type="checkbox" name="disciplines" id="cb-ux-design" class="checking">
             <label for="ux-design">UX Design</label>
           </div>
           <div>
-            <input type="checkbox" name="disciplines" id="cb-front-end">
+            <input type="checkbox" name="disciplines" id="cb-front-end" class="checking">
             <label for="front-end">Front-End Dev</label>
           </div>
         </fieldset>
-
+<!--================ CHECKBOX LOCATION=================== -->
         <fieldset id="location">
           <legend>Where are you interested in working?</legend>
           <p>You must be legaly authorised to work Walk on car leaving trail of paw prints on hood </p>
-          <div>
-            <input type="checkbox" name="states" id="austin-tx">
-            <label for="austin-tx">Austin, Texas</label>
-          </div>
-          <div>
-            <input type="checkbox" name="states" id="newyork-ny">
-            <label for="newyork-ny">New York, New York</label>
-          </div>
-          <div>
-            <input type="checkbox" name="states" id="toronto-ca">
-            <label for="toronto-ca">Toronto, Canada</label>
-          </div>
-          <div>
-            <input type="checkbox" name="states" id="shanghai-ch">
-            <label for="shanghai-ch">Shanghai, China</label>
-          </div>
-          <div>
-            <input type="checkbox" name="states" id="dublin-ir">
-            <label for="dublin-ir">Dublin, Ireland</label>
-          </div>
-          <div>
-            <input type="checkbox" name="states" id="hursley-uk">
-            <label for="hursley-uk">Hursley, United Kingdom</label>
-          </div>
-          <div>
-            <input type="checkbox" name="states" id="berlin-ge">
-            <label for="berlin-ge">Berlin, Germany</label>
-          </div>
-          <div>
-            <input type="checkbox" name="states" id="somewhere">
-            <label for="somewhere">Somewhere else</label>
-          </div>
+
+          <label for="austin-tx" class="check-label">
+            <input type="checkbox" name="states" id="austin-tx" class="checking">
+            <span class="checkmark"></span> Austin, Texas
+          </label>
+
+          <label for="newyork-ny" class="check-label">
+            <input type="checkbox" name="states" id="newyork-ny" class="checking">
+            <span class="checkmark"></span> New York, New York
+          </label>
+
+          <label for="toronto-ca" class="check-label">
+            <input type="checkbox" name="states" id="toronto-ca" class="checking">
+            <span class="checkmark"></span>Toronto, Canada
+          </label>
+
+          <label for="shanghai-ch" class="check-label">
+            <input type="checkbox" name="states" id="shanghai-ch" class="checking">
+            <span class="checkmark"></span>Shanghai, China
+          </label>
+
+          <label for="dublin-ir" class="check-label">
+            <input type="checkbox" name="states" id="dublin-ir" class="checking">
+            <span class="checkmark"></span>Dublin, Ireland
+          </label>
+          
+          <label for="hursley-uk" class="check-label">
+              <input type="checkbox" name="states" id="hursley-uk" class="checking">
+            <span class="checkmark"></span>Hursley, United Kingdom
+          </label>
+
+          <label for="berlin-ge" class="check-label">
+            <input type="checkbox" name="states" id="berlin-ge" class="checking">
+            <span class="checkmark"></span>Berlin, Germany
+          </label>
+
+          <label for="somewhere" class="check-label">
+            <input type="checkbox" name="states" id="somewhere" class="checking">
+            <span class="checkmark"></span>Somewhere else
+          </label>
         </fieldset>
       </form>
     </section>
@@ -144,7 +156,8 @@
         <fieldset id="portfolio-fieldset">
           <div>
             <legend>Prove you are IBMs next great designer by showing us who you are. What you've done, how you think. Tell us your
-              story.</legend>
+              story.
+            </legend>
             <input type="url" id="link">
             <label for="link">Portfolio link*</label>
           </div>
