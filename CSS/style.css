@@ -42,6 +42,14 @@ h3 {
   font-weight: medium;
 }
 
+input:valid {
+  border-bottom-color: white;
+}
+
+input:invalid {
+  border-bottom-color: red;
+}
+
 /* ================================================================
                    PERSONAL INFORMATION
 ============================================================= */
