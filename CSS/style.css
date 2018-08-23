@@ -404,7 +404,7 @@ legend {
   }
 }
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 667px) {
   
   #personal-information {
     grid-template-columns: 1fr 1fr;
@@ -448,4 +448,75 @@ legend {
   #section3 {
     padding-bottom: 0;
   }
+
+  .rb-label {
+    line-height: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+
+  html {
+    font-size: .8rem;
+  }
+
+  #personal-information {
+    grid-template-columns: 1fr ;
+    grid-template-rows: repeat (11, 1fr);
+    grid-template-areas:
+    "name" 
+    "phone"
+    "email"
+    "re-email"
+    "adress" 
+    "adress2" 
+    "city"
+    "state"
+    "country"
+    "zip" 
+    "how";
+    grid-gap: 1.5rem;
+   
+  }
+
+  #skills-location {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 0.5fr 1fr;
+    grid-template-areas: "pd pd" "od od" "lc lc";
+    grid-gap: 1.5rem;
+  }
+
+  #radio {
+    grid-template-columns: 1fr;
+    grid-template-rows: .5fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "title"
+    "sl1"
+    "sl2"
+    "sl3"
+    "sl4";
+    grid-gap: 1.5rem;
+  }
+
+  #section3 {
+    padding-bottom: 0;
+  }
+
+  .rb-label {
+    padding: 0.5rem 0;
+  }
+
+  #portfolio {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1fr;
+    grid-template-areas: "pf" "btn";
+    grid-gap: 1.5rem;
+  }
+
+  #submit-btn {
+    width: 100%;
+  }
+
 }
