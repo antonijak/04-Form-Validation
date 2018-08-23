@@ -60,6 +60,7 @@ input:invalid {
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1.5fr;
   grid-template-areas: "name name name phone" "email email email ..." "re-email re-email re-email ..." "adress adress adress adress" "adress2 adress2 adress2 adress2" "city state country zip" "how how how how";
   grid-gap: 1.5rem;
+ 
 }
 
 #name {
@@ -109,7 +110,7 @@ input:invalid {
 /* _____________styles______________ */
 
 section {
-  max-width: 70%;
+  max-width: 80%;
   margin: auto;
   border-top: 3px solid #368DB1;
   padding: 3rem 0;
@@ -119,7 +120,7 @@ input {
   border-color: transparent transparent #6E757F;
   background-color: transparent;
   outline: none;
-  width: 100%;
+  min-width: 0;
 }
 
 input[type=text],
