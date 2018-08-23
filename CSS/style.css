@@ -378,6 +378,14 @@ legend {
   color: white;
 }
 
+#submit-btn:hover {
+ border: 2px solid white;
+}
+
+#submit-btn:active {
+  color: black;
+}
+
 @media only screen and (max-width: 1147px) {
   .rb-label {
     line-height: 1.8rem;
