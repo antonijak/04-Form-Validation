@@ -87,18 +87,24 @@
 <!--================ CHECKBOX OTHER=================== -->
         <fieldset id="sl-other-discipline">
           <legend>Do you have experience with any other disciplines?</legend>
-          <div>
-            <input type="checkbox" name="disciplines" id="cb-visual-design" class="checking">
-            <label for="visual-design">Visual Design</label>
-          </div>
-          <div>
-            <input type="checkbox" name="disciplines" id="cb-ux-design" class="checking">
-            <label for="ux-design">UX Design</label>
-          </div>
-          <div>
-            <input type="checkbox" name="disciplines" id="cb-front-end" class="checking">
-            <label for="front-end">Front-End Dev</label>
-          </div>
+         
+            <label for="cb-visual-design" class="check-label">
+              <input type="checkbox" name="disciplines" id="cb-visual-design" class="checking">
+              <span class="checkmark"></span>
+              Visual Design
+            </label>
+          
+            <label for="cb-ux-design" class="check-label"> 
+              <input type="checkbox" name="disciplines" id="cb-ux-design" class="checking">
+              <span class="checkmark"></span>
+              UX Design
+            </label>
+            
+            <label for="cb-front-end" class="check-label">
+              <input type="checkbox" name="disciplines" id="cb-front-end" class="checking">
+              <span class="checkmark"></span>
+              Front-End Dev
+            </label>
         </fieldset>
 <!--================ CHECKBOX LOCATION=================== -->
         <fieldset id="location">
@@ -153,19 +159,19 @@
     <h3>3. Portfolio</h3>
     <section>
       <form action="" id="portfolio">
-        <fieldset id="portfolio-fieldset">
-          <div>
+        <div id="portfolio-fieldset">
             <legend>Prove you are IBMs next great designer by showing us who you are. What you've done, how you think. Tell us your
               story.
             </legend>
-            <input type="url" id="link">
-            <label for="link">Portfolio link*</label>
+            <input type="url" id="link" placeholder="Portfolio link*">
+            <div  id="anything" >
+            <textarea  name=""placeholder="Anything else (another link, availibility, etc.)?"></textarea>
           </div>
-          <textarea name="" id="anything" placeholder="Anything else (another link, availibility, etc.)?"></textarea>
-        </fieldset>
-      </form>
+          </div>
+      
       <!--======================SUBMIT=====================-->
       <input type="button" value="Submit" id="submit-btn">
+    </form>
     </section>
   </main>
 </body>
