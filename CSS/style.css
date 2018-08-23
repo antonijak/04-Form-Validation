@@ -7,6 +7,7 @@ body {
   font-family: 'Roboto', sans-serif;
   color: #6E757F;
   max-width: 1500px;
+  min-width: 350px;
   margin: 0 auto;
 }
 
@@ -377,7 +378,14 @@ legend {
   color: white;
 }
 
-@media only screen and (max-width: 1071px) {
+@media only screen and (max-width: 1147px) {
+  .rb-label {
+    line-height: 1.8rem;
+  }
+
+}
+
+@media only screen and (max-width: 1091px) {
   main {
     max-width: 90%;
   }
@@ -402,6 +410,11 @@ legend {
   h3 {
     margin-left: 2%;
   }
+
+  #portfolio {
+    grid-template-areas: "pf pf pf pf" "btn btn ... ...";
+  }
+
 }
 
 @media only screen and (max-width: 667px) {
@@ -452,7 +465,32 @@ legend {
   .rb-label {
     line-height: 2.5rem;
   }
+
+  #portfolio {
+    grid-template-areas: "pf pf pf pf" "btn btn btn ...";
+  }
+
+  #submit-btn {
+    width: 100%;
+  }
+
 }
+@media only screen and (max-width: 480px) {
+ 
+  
+  .rb-label {
+    line-height: 5rem;
+  }
+
+  #skills-location {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 0.5fr 1fr;
+    grid-template-areas: "pd pd" "od od" "lc lc";
+    grid-gap: 1.5rem;
+  }
+}
+
 
 @media only screen and (max-width: 375px) {
 
@@ -479,13 +517,6 @@ legend {
    
   }
 
-  #skills-location {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 0.5fr 1fr;
-    grid-template-areas: "pd pd" "od od" "lc lc";
-    grid-gap: 1.5rem;
-  }
 
   #radio {
     grid-template-columns: 1fr;
@@ -503,8 +534,12 @@ legend {
     padding-bottom: 0;
   }
 
+  #radio li {
+    height: fit-content;
+  }
+
   .rb-label {
-    padding: 0.5rem 0;
+   line-height: 2rem;
   }
 
   #portfolio {
