@@ -6,6 +6,8 @@
 body {
   font-family: 'Roboto', sans-serif;
   color: #6E757F;
+  max-width: 1500px;
+  margin: 0 auto;
 }
 
 main {
@@ -37,7 +39,7 @@ h5 {
 }
 
 h3 {
-  margin-left: 14%;
+  margin-left: 9%;
   padding: .8rem;
   font-weight: medium;
 }
@@ -382,6 +384,10 @@ legend {
   section {
     max-width: 90%;
   }
+
+  h3 {
+    margin-left: 4%;
+  }
 }
 
 @media only screen and (max-width: 852px) {
@@ -392,14 +398,54 @@ legend {
   section {
     max-width: 95%;
   }
+
+  h3 {
+    margin-left: 2%;
+  }
 }
 
 @media only screen and (max-width: 650px) {
-  main {
-    max-width: 100%;
+  
+  #personal-information {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat (8, 1fr);
+    grid-template-areas:
+    "name name" 
+    "phone ..."
+    "email email"
+    "re-email re-email"
+    "adress adress" 
+    "adress2 adress2" 
+    "city state"
+    "country zip" "how how";
+    grid-gap: 1.5rem;
+   
   }
 
-  section {
-    max-width: 95%;
+  h3 {
+    margin-left: 0;
+  }
+
+
+  #skills-location {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1.5fr;
+    grid-template-areas: "pd pd pd pd" "od od lc lc";
+    grid-gap: 1.5rem;
+  }
+
+  #radio {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: .5fr 1fr 1fr;
+    grid-template-areas: 
+    "title title "
+    "sl1 sl2"
+    "sl3 sl4";
+    grid-gap: 1.5rem;
+  }
+
+  #section3 {
+    padding-bottom: 0;
   }
 }
