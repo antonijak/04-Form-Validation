@@ -1,6 +1,4 @@
-  //  ====================================================
-  //                PERSONAL INFORMATION
-  //  ===================================================
+
   const validationFields = [
     fullNAme = {field: document.querySelector('#name'), validation: /[A-Z]{1}[a-z]{2,8}[ -]?[A-Z]{1}[a-z]{2,8}/},
     phone = {field: document.querySelector('#phone'), validation: /[0-9]{3}[ -]*[0-9]{4}[ -]?[0-9]{3}/},
@@ -11,10 +9,8 @@
     country = {field: document.querySelector('#country'), validation: /[A-Za-z' -\.]+/},
     zip = {field: document.querySelector('#zip'), validation: /[0-9]{5}/},
     how = {field: document.querySelector('#how'), validation: /.+/}
-    // designResearch: document.querySelector('#design-research'),
-    // visualDesign: document.querySelector('#visual-design'),
-    // uxDesign: document.querySelector('#ux-design'),
-    // frontEnd: document.querySelector('#front-end'),
+  ]
+
     // cbVisualDesign: document.querySelector('#cb-visual-design'),
     // cbUxDesign: document.querySelector('#cb-ux-design'),
     // cbFrontEnd: document.querySelector('#cb-front-end'),
@@ -26,16 +22,15 @@
     // hursleyUk: document.querySelector('#hursley-uk'),
     // berlinGe: document.querySelector('#berlin-ge'),
     // somewhere: document.querySelector('#somewhere'),
-  ]
+    // adress2 = document.querySelector('#adress2');
+    // state = document.querySelector('#state');
 
-  // ====================================================
-  //                   PORTFOLIO
-  // ===================================================
-
-
-  adress2 = document.querySelector('#adress2');
-  state = document.querySelector('#state');
-
+  const radio = {
+    designResearch: document.querySelector('#design-research'),
+    visualDesign: document.querySelector('#visual-design'),
+    uxDesign: document.querySelector('#ux-design'),
+    frontEnd: document.querySelector('#front-end')
+  }
 
   const portfolio = {
     link: document.querySelector('#link'),
@@ -44,18 +39,6 @@
 
 
 
-  // const expressions = {
-  //   ,
-  //   phoneValid: ,
-  //   emailValid: "",
-  //   adressValid: gi,
-  //   cistyValid: /[A-Z][A-Za-z' -]+/gi,
-  //   stateValid: /[A-Z][A-Za-z' -]/gi,
-  //   country: /[A-Z][A-Za-z' -]+/gi,
-  //   zip: /[0-9 ]+/gi,
-  //   how: /[A-Za-z0-9 -()\.\,]+/gi,
-  //   portfolioLink: ""
-  // }
 
   const addEvent = (field, expression) => {
     field.addEventListener('change', () => {
@@ -69,3 +52,66 @@
   }
 
   validationFields.forEach(field => addEvent(field.field, field.validation))
+
+  const radios= document.querySelectorAll('.radios');
+  const bla = document.querySelector('#sl-title');
+  const bla1 = document.querySelector('#od-legend');
+  
+
+  
+  for (let button of radios){
+    button.addEventListener('click', (e) => takeValue(e, bla ))
+  }
+
+  const otherDisciplines = document.querySelectorAll('.od');
+  
+  for (let button of otherDisciplines){
+    button.addEventListener('click', (e) => takeValue(e, bla1 ))
+  }
+
+  let value;
+
+
+  function takeValue (e, field){
+    e.target.setAttribute('checked', 'true')
+    value = e.target.value;
+    console.log(value);
+    field.style.color = 'white';
+  }
+
+
+  function submit () {
+    
+    let isItTrue = 0;
+    let x = 0;
+    for (let button of radios){
+      if(button.getAttribute('checked')){
+        isItTrue++
+      }
+    }
+
+    for (let button of otherDisciplines){
+      if(button.getAttribute('checked')){
+        x++
+      }
+    }
+    if(isItTrue > 0){
+      console.log('true');
+      
+    return true
+    } else {
+      console.log('false');
+      bla.style.color = 'red';
+    }
+
+    if(x > 0){
+      console.log('true');
+      
+    return true
+    } else {
+      console.log('false');
+      bla1.style.color = 'red';
+    }
+  }
+
+  portfolio.submitBtn.addEventListener('click', submit);
