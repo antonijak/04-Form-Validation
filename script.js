@@ -1,6 +1,6 @@
 // all the inputs that require validation
 const validationFields = [
-  fullNAme = {
+  fullName = {
     field: document.querySelector('#name'),
     validation: /[A-Z]{1}[a-z]{2,8}[ -]?[A-Z]{1}[a-z]{2,8}/
   },
@@ -62,18 +62,16 @@ const buttonsAndLabel = [
 const submitBtn = document.querySelector('#submit-btn');
 
 
-let areFieldsValid;
-
 // validates inputs and turns it red or green acording to validity
 const inputValidation = (field, expression) => {
   field.addEventListener('change', () => {
 
     if (field.value.match(expression) && field.value.match(expression) == field.value) {
       field.style.borderBottom = '1px solid green';
-      areFieldsValid = true
     } else {
       field.style.borderBottom = '1px solid red';
-      areFieldsValid = false
+      field.value = null;
+
     }
   })
 }
@@ -110,7 +108,20 @@ const isItChecked = (array, label) => {
 
 
 validationFields.forEach(field => inputValidation(field.field, field.validation));
-console.log(areFieldsValid);
+
+function validatingInputs() {
+  let count = 0;
+  validationFields.forEach(field => {
+    if (field.field.value) {
+      count++
+    }
+  })
+  if (count === validationFields.length) {
+    return true
+  } else {
+    return false
+  }
+}
 
 let areButtonsValid;
 
@@ -122,11 +133,14 @@ const submitForm = (e) => {
     areButtonsValid = isItChecked(item.array, item.label)
   })
 
-  if (areFieldsValid && areButtonsValid){
-  console.log('true',areFieldsValid, areButtonsValid);
-  
+
+
+  if (validatingInputs() && areButtonsValid) {
+    //checks if all he fields are filled and correct
+    console.log('true', validatingInputs(), areButtonsValid);
+    alert('Form is filled correctly and is SUBMITTED')
   } else {
-    console.log('false', areFieldsValid, areButtonsValid);
+    console.log('false', validatingInputs(), areButtonsValid);
   }
   // here goes function that sends form data to server if all the required fields are valid
 }
