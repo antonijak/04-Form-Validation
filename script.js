@@ -2,46 +2,55 @@
 const validationFields = [
   fullName = {
     field: document.querySelector('#name'),
-    validation: /[A-Z]{1}[a-z]{2,8}[ -]?[A-Z]{1}[a-z]{2,8}/
+    validation: /[A-Z]{1}[A-Za-z]{2,8}[ -]?[A-Z]{1}[A-Za-z]{2,8}/,
+    span: document.querySelector('#nameS')
   },
   phone = {
     field: document.querySelector('#phone'),
-    validation: /[0-9]{3}[ -]*[0-9]{4}[ -]?[0-9]{3}/
+    validation: /[0-9]{3}[ -]*[0-9]{4}[ -]?[0-9]{3}/,
+    span: document.querySelector('#phoneS')
   },
   email = {
     field: document.querySelector('#email'),
-    validation: /[a-z0-9\.]{3,15}\@{1}[a-z0-9]{2,10}[\.]{1}[a-z]{3}/
+    validation: /[a-z0-9\.]{3,15}\@{1}[a-z0-9]{2,10}[\.]{1}[a-z]{3}/,
+    span: document.querySelector('#emailS')
   },
   reEmail = {
     field: document.querySelector('#re-email'),
-    validation: email.validation
+    validation: email.validation,
+    span: document.querySelector('#re-emailS')
   },
   adress = {
     field: document.querySelector('#adress'),
-    validation: /[A-Z][A-Za-z0-9' -]+[0-9 ]{1,4}[A-Za-z]?[ ]?[0-9]{0,3}/
+    validation: /[A-Z][A-Za-z0-9' -]+[0-9 ]{1,4}[A-Za-z]?[ ]?[0-9]{0,3}/,
+    span: document.querySelector('#adressS')
   },
   city = {
     field: document.querySelector('#city'),
-    validation: /[A-Za-z' -\.]+/
+    validation: /[A-Z]{1}[A-Za-z' -\.]+/,
+    span: document.querySelector('#cityS')
   },
   country = {
     field: document.querySelector('#country'),
-    validation: /[A-Za-z' -\.]+/
+    validation: /[A-Z]{1}[A-Za-z' -\.]+/,
+    span: document.querySelector('#countryS')
   },
   zip = {
     field: document.querySelector('#zip'),
-    validation: /[0-9]{5}/
+    validation: /[0-9]{5}/,
+    span: document.querySelector('#zipS')
   },
   how = {
     field: document.querySelector('#how'),
-    validation: /.+/
+    validation: /.+/,
+    span: document.querySelector('#howS')
   },
   link = {
     field: document.querySelector('#link'),
-    validation: /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig
+    validation: /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig,
+    span: document.querySelector('#linkS')
   }
 ]
-
 
 // all the radio and checkmark buttons
 const buttonsAndLabel = [
@@ -61,17 +70,17 @@ const buttonsAndLabel = [
 
 const submitBtn = document.querySelector('#submit-btn');
 
-
 // validates inputs and turns it red or green acording to validity
-const inputValidation = (field, expression) => {
+const inputValidation = (field, span, expression) => {
   field.addEventListener('change', () => {
 
     if (field.value.match(expression) && field.value.match(expression) == field.value) {
       field.style.borderBottom = '1px solid green';
+      span.style.display = 'none';
     } else {
       field.style.borderBottom = '1px solid red';
+      span.style.display = 'block';
       field.value = null;
-
     }
   })
 }
@@ -87,7 +96,6 @@ const setChecked = (array) => {
     }
   }))
 }
-
 
 // checks if the button has "checked" attribute
 const isItChecked = (array, label) => {
@@ -107,15 +115,18 @@ const isItChecked = (array, label) => {
 }
 
 
-validationFields.forEach(field => inputValidation(field.field, field.validation));
+validationFields.forEach(field => inputValidation(field.field, field.span, field.validation));
 
 function validatingInputs() {
   let count = 0;
   validationFields.forEach(item=> {
     if (item.field.value) {
       count++
+      item.span.style.display = 'none';
     } else {
       item.field.style.borderBottom = '1px solid red';
+      item.span.style.display = 'block';
+
     }
   })
   if (count === validationFields.length) {
@@ -138,16 +149,13 @@ const submitForm = (e) => {
     //checks if all he fields are filled and correct
     console.log('true', validatingInputs(), areButtonsValid);
     alert('Form is filled correctly and is SUBMITTED')
-    // here goes function that sends form data to server
+    // ------------------- >   here goes function that sends form data to server
   } else {
     console.log('false', validatingInputs(), areButtonsValid);
+    // ------------------- >  display user instructions for valid answers
   }
 
 }
-
-
-
-
 
 
 
@@ -157,3 +165,4 @@ buttonsAndLabel.forEach(item => {
 })
 
 submitBtn.addEventListener('click', (e) => submitForm(e));
+

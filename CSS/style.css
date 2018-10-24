@@ -56,6 +56,16 @@ input:invalid {
 /* ================================================================
                    PERSONAL INFORMATION
 ============================================================= */
+.hidden-message {
+  font-size: .8rem;
+  color: rgb(250, 94, 94);
+  height: 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-top: -1rem;
+  display: none;
+}
+
 
 #personal-information {
   display: grid;
@@ -70,7 +80,15 @@ input:invalid {
   grid-area: name;
 }
 
+#nameS {
+  grid-area: name;
+}
+
 #phone {
+  grid-area: phone;
+}
+
+#phoneS {
   grid-area: phone;
 }
 
@@ -78,11 +96,22 @@ input:invalid {
   grid-area: email;
 }
 
+#emailS{
+  grid-area: email;
+}
+
 #re-email {
+  grid-area: re-email;
+}
+#re-emailS {
   grid-area: re-email;
 }
 
 #adress {
+  grid-area: adress;
+}
+
+#adressS {
   grid-area: adress;
 }
 
@@ -94,11 +123,20 @@ input:invalid {
   grid-area: city;
 }
 
+#cityS {
+  grid-area: city;
+}
+
 #state {
   grid-area: state;
 }
 
+
 #country {
+  grid-area: country;
+}
+
+#countryS {
   grid-area: country;
 }
 
@@ -106,8 +144,17 @@ input:invalid {
   grid-area: zip;
 }
 
+#zipS {
+  grid-area: zip;
+}
+
 #how {
   grid-area: how;
+}
+
+#howS {
+  grid-area: how;
+  margin-top: -.5rem;
 }
 
 /* _____________styles______________ */
