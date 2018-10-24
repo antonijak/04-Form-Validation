@@ -111,9 +111,11 @@ validationFields.forEach(field => inputValidation(field.field, field.validation)
 
 function validatingInputs() {
   let count = 0;
-  validationFields.forEach(field => {
-    if (field.field.value) {
+  validationFields.forEach(item=> {
+    if (item.field.value) {
       count++
+    } else {
+      item.field.style.borderBottom = '1px solid red';
     }
   })
   if (count === validationFields.length) {
@@ -128,21 +130,19 @@ let areButtonsValid;
 // checks if all the fields are valid (and sends data to the server)
 const submitForm = (e) => {
   e.preventDefault();
-
   buttonsAndLabel.forEach(item => {
     areButtonsValid = isItChecked(item.array, item.label)
   })
-
-
 
   if (validatingInputs() && areButtonsValid) {
     //checks if all he fields are filled and correct
     console.log('true', validatingInputs(), areButtonsValid);
     alert('Form is filled correctly and is SUBMITTED')
+    // here goes function that sends form data to server
   } else {
     console.log('false', validatingInputs(), areButtonsValid);
   }
-  // here goes function that sends form data to server if all the required fields are valid
+
 }
 
 
