@@ -78,7 +78,7 @@ const inputValidation = (field, span, expression) => {
       field.style.borderBottom = '1px solid green';
       span.style.display = 'none';
     } else {
-      field.style.borderBottom = '1px solid red';
+      field.style.borderBottom = '1px solid rgb(250, 94, 94)';
       span.style.display = 'block';
       field.value = null;
     }
@@ -109,7 +109,7 @@ const isItChecked = (array, label) => {
     label.style.color = 'white';
     return true
   } else {
-    label.style.color = 'red';
+    label.style.color = 'rgb(250, 94, 94)';
     return false
   }
 }
@@ -124,7 +124,7 @@ function validatingInputs() {
       count++
       item.span.style.display = 'none';
     } else {
-      item.field.style.borderBottom = '1px solid red';
+      item.field.style.borderBottom = '1px solid rgb(250, 94, 94)';
       item.span.style.display = 'block';
 
     }

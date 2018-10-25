@@ -60,7 +60,6 @@ input:invalid {
   font-size: .8rem;
   color: rgb(250, 94, 94);
   height: 1rem;
-  text-align: center;
   margin-bottom: 2rem;
   margin-top: -1rem;
   display: none;
@@ -392,8 +391,16 @@ legend {
   grid-area: 1a;
 }
 
-#link {
+#link-container {
   grid-area: 2a;
+}
+
+#link {
+  width: 100%;
+}
+
+#linkS{
+  margin-bottom: 1rem;
 }
 
 #anything {
