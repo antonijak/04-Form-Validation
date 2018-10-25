@@ -97,6 +97,7 @@ const setChecked = (array) => {
   }))
 }
 
+
 // checks if the button has "checked" attribute
 const isItChecked = (array, label) => {
   let isTrue = 0;
@@ -117,7 +118,9 @@ const isItChecked = (array, label) => {
 
 validationFields.forEach(field => inputValidation(field.field, field.span, field.validation));
 
-function validatingInputs() {
+
+// turns invalid text inputs red and displays user instructions
+function validateAllInputs() {
   let count = 0;
   validationFields.forEach(item=> {
     if (item.field.value) {
@@ -126,7 +129,6 @@ function validatingInputs() {
     } else {
       item.field.style.borderBottom = '1px solid rgb(250, 94, 94)';
       item.span.style.display = 'block';
-
     }
   })
   if (count === validationFields.length) {
@@ -145,19 +147,18 @@ const submitForm = (e) => {
     areButtonsValid = isItChecked(item.array, item.label)
   })
 
-  if (validatingInputs() && areButtonsValid) {
+  if (validateAllInputs() && areButtonsValid) {
     //checks if all he fields are filled and correct
-    console.log('true', validatingInputs(), areButtonsValid);
+    // console.log('true', validateAllInputs(), areButtonsValid);
     alert('Form is filled correctly and is SUBMITTED')
     // ------------------- >   here goes function that sends form data to server
   } else {
-    console.log('false', validatingInputs(), areButtonsValid);
+    alert('You need to correctly fill all the required fields')
+    // console.log('false', validateAllInputs(), areButtonsValid);
     // ------------------- >  display user instructions for valid answers
   }
 
 }
-
-
 
 
 buttonsAndLabel.forEach(item => {
